@@ -10,18 +10,13 @@ import com.hazelcast.core.EntryEvent;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
-import com.hazelcast.core.IdGenerator;
-
 import com.hazelcast.map.listener.EntryAddedListener;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import com.mongodb.client.result.UpdateResult;
-import java.util.ArrayList;
 import java.util.Arrays;
 import org.bson.Document;
 import org.kohsuke.randname.RandomNameGenerator;
@@ -31,7 +26,7 @@ import org.kohsuke.randname.RandomNameGenerator;
  *
  * @author akrv
  */
-public class HazelMongoTranslator {
+public class Hazelmongotranslator {
     static RandomNameGenerator rnd = new RandomNameGenerator(0);
     /**
      * @param args the command line arguments
@@ -50,7 +45,7 @@ public class HazelMongoTranslator {
     static class MyEntryListener implements EntryAddedListener<String, String> {
         @Override
         public void entryAdded(EntryEvent<String, String> event ) {
-        MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
+        MongoClient mongoClient = new MongoClient( "129.217.152.20" , 27017 );
         MongoDatabase db = mongoClient.getDatabase("translator-dev");
         MongoCollection<Document> collection = db.getCollection("nodes");
         
