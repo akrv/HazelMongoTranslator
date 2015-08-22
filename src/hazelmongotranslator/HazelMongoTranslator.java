@@ -46,7 +46,7 @@ public class Hazelmongotranslator {
         @Override
         public void entryAdded(EntryEvent<String, String> event ) {
         MongoClient mongoClient = new MongoClient( "129.217.152.20" , 27017 );
-        MongoDatabase db = mongoClient.getDatabase("translator-dev");
+        MongoDatabase db = mongoClient.getDatabase("autophy-dev");
         MongoCollection<Document> collection = db.getCollection("nodes");
         
         
