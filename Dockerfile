@@ -8,4 +8,4 @@ RUN apt-get install -y openjdk-7-jdk
 
 ADD /dis* /dist
 
-RUN java -jar /dist/HazelMongoTranslator.jar
+#RUN java -jar /dist/HazelMongoTranslator.jar
